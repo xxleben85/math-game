@@ -19,3 +19,8 @@
 .calculation {
   font-size: 18px;
 }
+
+#number-limit {
+  margin: auto;
+  width: 40%;
+}
