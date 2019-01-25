@@ -1,0 +1,21 @@
+.score {
+  font-size: 20px;
+}
+
+.container {
+  text-align: center;
+}
+
+.row input {
+  text-align: center;
+  font-weight: bold;
+  font-size: 5px;
+}
+
+.seconds {
+  font-size: 15px;
+}
+
+.calculation {
+  font-size: 18px;
+}
