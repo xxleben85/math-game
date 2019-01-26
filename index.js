@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   var timeLeft = 10;
   var score = 0;
+  var highScore = 0;
 
   var randomNum = function(num) {
   	return Math.ceil(Math.random() * num);
@@ -23,6 +24,11 @@ $(document).ready(function() {
   var newEquation = function() {
     currentEquation = mathProblem();
     $('#calculation').text(currentEquation.equation);
+  };
+
+  var updateScore = function (amount) {
+    score += amount;
+    $('#current-score').text(score);
   };
 
   var updateTimeLeft = function(amount) {
@@ -50,7 +56,7 @@ $(document).ready(function() {
     if (!interval) {
       if (timeLeft === 0) {
         updateTimeLeft(10);
-        $('#high-score').text(score);
+        endGame();
         updateScore(-score);
       }
       interval = setInterval(function() {
@@ -64,9 +70,9 @@ $(document).ready(function() {
     };
   };
 
-  var updateScore = function(amount) {
-    score += amount;
-    $('#current-score').text(score);
+  var endGame = function() {
+    highScore = highScore > score ? highScore : score;
+    $('#high-score').text(highScore);
   }
 
   newEquation();
